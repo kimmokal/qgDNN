@@ -1,13 +1,50 @@
 # DNN framework for quark/gluon discrimination
 
+## Initial setup
 First clone the repository.
 ```
 $ git clone https://github.com/kimmokal/qgDNN
 $ cd qgDNN/
+```
+Run a bash script to setup the necessary directories.
+```
+$ source dir_setup.sh
 ```
 Create a virtual environment in which to install the required Python packages.
 ```
 $ virtualenv venv   #Make sure that the environment is created for Python 2.7, not Python 3
 $ source venv/bin/activate
 $ pip install -r requirements.txt
+```
+In the beginning of each new session, be sure to activate the virtual environment.
+
+## Preprocessing
+### NOTE: In all of the scripts below, you will need to change the _workPath_ line to your desired working directory path.
+
+The jets are separated to seven different eta,pT bins, found in the _data/binned/_ directory. There are three DNN models available for training (found in the _models_ directory), and each requires its own preprocessing script.
+
+```
+$ python models/fNN/preprocessTuples_fNN.py
+$ python models/deepJet/preprocessTuples_deepJet.py
+$ python models/jetImages/preprocessTuples_jetImages.py
+```
+
+The scripts will save the preprocessed jets to _data/trainSets/_ and _data/testSets/_. In order to preprocess the jets for each eta,pT bin, you will need to change the bin manually in each of the scripts.
+
+## DNN training
+
+When the preprocessing is done, you can now train the DNN models. A specific model is trained for each eta,pT bin.
+```
+$ python models/fNN/preprocessTuples_fNN.py
+$ python models/deepJet/preprocessTuples_deepJet.py
+$ python models/jetImages/preprocessTuples_jetImages.py
+```
+
+The trained models are saved to the _models/trainedModels/_ directory.
+
+## Plotting
+```
+$ python plotter/
+$ python models/deepJet/preprocessTuples_deepJet.py
+$ python models/jetImages/preprocessTuples_jetImages.py
 ```
