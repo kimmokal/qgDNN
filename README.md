@@ -21,6 +21,8 @@ In the beginning of each new session, be sure to activate the virtual environmen
 ## Preprocessing
 __NOTE: In all of the scripts below, you will need to change the _workPath_ line to the path to your own working directory.__
 
+TODO: Binning the jets.
+
 The jets are separated to seven different eta,pT bins, found in the _data/binned/_ directory. There are three DNN models available for training (found in the _models_ directory), and each requires its own preprocessing script.
 
 ```
