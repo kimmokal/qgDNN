@@ -29,7 +29,7 @@ $ python models/deepJet/preprocessTuples_deepJet.py
 $ python models/jetImages/preprocessTuples_jetImages.py
 ```
 
-The scripts will save the preprocessed jets to _data/trainSets/_ and _data/testSets/_. In order to preprocess the jets for each eta,pT bin, you will need to change the bin manually in each of the scripts.
+The scripts will save the preprocessed jets to _data/trainSets/_ and _data/testSets/_. In order to preprocess the jets for each eta,pT bin, you will need to change the bin manually in the code of each scripts.
 
 ## DNN training
 
@@ -51,4 +51,4 @@ The plots are saved to the _plotter/plots/_ directory. The second script can be 
 ```
 $ python plotter/compareAUC_plotter.py
 ```
-This script is crude and requires one to manually input the ROC AUC values in the script.
+This script is crude and requires one to manually input the ROC AUC values in the code.
