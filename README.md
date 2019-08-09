@@ -19,7 +19,7 @@ $ pip install -r requirements.txt
 In the beginning of each new session, be sure to activate the virtual environment.
 
 ## Preprocessing
-### NOTE: In all of the scripts below, you will need to change the _workPath_ line to your desired working directory path.
+__NOTE: In all of the scripts below, you will need to change the _workPath_ line to the path to your desired working directory.__
 
 The jets are separated to seven different eta,pT bins, found in the _data/binned/_ directory. There are three DNN models available for training (found in the _models_ directory), and each requires its own preprocessing script.
 
@@ -43,8 +43,12 @@ $ python models/jetImages/preprocessTuples_jetImages.py
 The trained models are saved to the _models/trainedModels/_ directory.
 
 ## Plotting
+There are two scripts for plotting in the _plotter/_ directory. The first one plots the ROC curves for the different models.
 ```
-$ python plotter/
-$ python models/deepJet/preprocessTuples_deepJet.py
-$ python models/jetImages/preprocessTuples_jetImages.py
+$ python plotter/AUC_plotter.py
 ```
+The plots are saved to the _plotter/plots/_ directory. The second script can be used to compare the ROC AUC in different bins.
+```
+$ python plotter/compareAUC_plotter.py
+```
+This script is crude and requires one to manually input the ROC AUC values in the script.
