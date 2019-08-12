@@ -3,7 +3,7 @@
 # Path to the working directory
 WORK_DIR=/work/kimmokal/qgDNN
 
-# Paths to the output directory and the directory containing the friend trees
+# Path to the original ntuples and the output directory
 DATA_DIR=/work/data/QCD_jetTuples_Pythia8_PU_Moriond17/merged/
 OUT_DIR=$WORK_DIR/data/binned/
 
